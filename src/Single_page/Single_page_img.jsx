@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react'
+import React, { useState , useEffect , memo} from 'react'
 
 
 // we destructur our img props and set default object inside without default value map gives error;
@@ -12,12 +12,13 @@ const Single_page_img = ({ imgs}) => {
 
     // We can use useEffect for getting a data using async and await method and set State when we get the data.
     useEffect(() => {
-        const updateState =async () => {
-            let data = await imgs?.[0];
-            setChangeImg(data)
-        }
-        updateState();
+        // const updateState =async () => {
+            // let data = await imgs?.[0];
+            setChangeImg(imgs?.[0])
+        // }
+        // updateState();
     }, [imgs])
+    console.log("hello");
     // console.log(imgs);
     // console.log(changeImg.url);
 
@@ -37,4 +38,4 @@ const Single_page_img = ({ imgs}) => {
     )
 }
 
-export default Single_page_img;
+export default memo(Single_page_img);

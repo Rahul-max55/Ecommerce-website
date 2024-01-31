@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {memo} from 'react';
 import { FaStarHalf } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 
@@ -22,4 +22,4 @@ const Single_page_stars = (props) => {
     )
 }
 
-export default Single_page_stars
+export default memo(Single_page_stars);
