@@ -13,5 +13,10 @@ test("navigation menu button Click", async ({ page }) => {
 
 test("hero section", async ({ page }) => {
   await page.goto("http://localhost:3000/");
-  await page.getByRole('heading', { name: 'We Provide Best Quality and' })
+  await page.getByRole("heading", { name: "We Provide Best Quality and" });
+});
+
+test("get selector using pick locator", async ({ page }) => {
+  await page.goto("http://localhost:3000/");
+  await page.getByRole("link", { name: "Accessories Accessories" }).click();
 });
